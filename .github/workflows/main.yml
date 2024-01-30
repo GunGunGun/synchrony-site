@@ -1,0 +1,26 @@
+name: Build
+on:
+  workflow_dispatch:
+jobs:
+  Build:
+    name: Build
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 6.31.0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'pnpm'
+      - run: pnpm install
+      - run: pnpm build
+      - uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: /home/runner/work/synchrony-site 
+      - name: Download all workflow run artifacts
+        uses: actions/download-artifact@v3
+          
