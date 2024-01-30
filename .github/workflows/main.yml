@@ -17,10 +17,11 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install
       - run: pnpm build
+      - run: ls
       - uses: actions/upload-artifact@v3
         with:
           name: my-artifact
-          path: /home/runner/work/synchrony-site/dist
+          path: /home/runner/work/synchrony-site/synchrony-site/dist
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v3
           
