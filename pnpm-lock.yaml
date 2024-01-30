@@ -1,4 +1,4 @@
-lockfileVersion: 5.4
+lockfileVersion: 6.31.0
 
 specifiers:
   '@chialab/esbuild-plugin-html': 0.14.19
